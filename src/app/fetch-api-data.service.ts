@@ -20,7 +20,7 @@ export class UserRegistrationService {
   constructor(private http: HttpClient) {}
 
   //GET a list of movies
-  public getAllMovies(): Observable<any> {
+  getAllMovies(): Observable<any> {
     const token = localStorage.getItem('token');
     return this.http
       .get(apiUrl + 'movies', {
