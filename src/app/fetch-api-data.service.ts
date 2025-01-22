@@ -146,7 +146,7 @@ export class UserRegistrationService {
       .pipe(catchError(this.handleError));
   }
 
-  private extractResponseData(res: Response): any {
+  private extractResponseData(res: any): any {
     const body = res;
     return body || {};
   }
