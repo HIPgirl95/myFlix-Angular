@@ -107,6 +107,19 @@ export class UserRegistrationService {
       .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
 
+  //GET user's favorite movies list
+  //NOT YET AN AVAILABLE ENDPOINT
+  public getFavorites(username: string): Observable<any> {
+    const token = this.getStoredToken();
+    return this.http
+      .get(apiUrl + 'users/' + username + '/favs', {
+        headers: new HttpHeaders({
+          Authorization: 'Bearer ' + token,
+        }),
+      })
+      .pipe(map(this.extractResponseData), catchError(this.handleError));
+  }
+
   //DELETE user
   public removeUser(username: string): Observable<any> {
     const token = this.getStoredToken();
