@@ -11,6 +11,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-user-registration-form',
+  standalone: false,
   templateUrl: './user-registration-form.component.html',
   styleUrl: './user-registration-form.component.scss',
 })
