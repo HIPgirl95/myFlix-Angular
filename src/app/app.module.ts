@@ -16,7 +16,7 @@ import { UserRegistrationFormComponent } from './user-registration-form/user-reg
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
-  declarations: [AppComponent, UserRegistrationFormComponent],
+  declarations: [],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -33,6 +33,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     UserRegistrationFormComponent,
   ],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [],
 })
 export class AppModule {}

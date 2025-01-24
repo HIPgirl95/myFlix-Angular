@@ -8,7 +8,7 @@ import { FormsModule } from '@angular/forms';
   selector: 'app-root',
   imports: [FormsModule],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  styleUrl: './app.component.scss',
 })
 export class AppComponent {
   title = 'myFlix-Angular-Client';
