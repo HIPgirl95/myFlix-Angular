@@ -29,6 +29,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatCardModule,
     MatFormFieldModule,
     MatSnackBarModule,
+    AppComponent,
+    UserRegistrationFormComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],
