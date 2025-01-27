@@ -19,6 +19,7 @@ import { UserRegistrationFormComponent } from './user-registration-form/user-reg
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { MovieCardComponent } from './movie-card/movie-card.component';
+import { UserLoginFormComponent } from './user-login-form/user-login-form.component';
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
@@ -27,7 +28,12 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    UserRegistrationFormComponent,
+    UserLoginFormComponent,
+    MovieCardComponent,
+    AppComponent,
+  ],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -43,6 +49,7 @@ const appRoutes: Routes = [
     AppComponent,
     UserRegistrationFormComponent,
     RouterModule.forRoot(appRoutes),
+    RouterModule,
     MatIconModule,
   ],
   providers: [],

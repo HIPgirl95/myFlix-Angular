@@ -7,7 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-movie-card',
-  imports: [MatCardModule, MatDialogModule, CommonModule, MatIconModule],
+  standalone: false,
   templateUrl: './movie-card.component.html',
   styleUrl: './movie-card.component.scss',
 })
