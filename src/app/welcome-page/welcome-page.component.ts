@@ -2,16 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { UserLoginFormComponent } from '../user-login-form/user-login-form.component';
 import { UserRegistrationFormComponent } from '../user-registration-form/user-registration-form.component';
 import { MatDialog } from '@angular/material/dialog';
-import { FormsModule } from '@angular/forms';
-import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-welcome-page',
-  imports: [FormsModule, MatButtonModule],
+  standalone: false,
   templateUrl: './welcome-page.component.html',
   styleUrl: './welcome-page.component.scss',
 })
-export class WelcomePageComponent implements OnInit {
+export class WelcomePageComponent {
   constructor(public dialog: MatDialog) {}
   ngOnInit(): void {}
 

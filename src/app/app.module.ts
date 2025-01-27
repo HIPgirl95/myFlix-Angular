@@ -33,6 +33,7 @@ const appRoutes: Routes = [
     UserLoginFormComponent,
     MovieCardComponent,
     AppComponent,
+    WelcomePageComponent,
   ],
   imports: [
     BrowserModule,

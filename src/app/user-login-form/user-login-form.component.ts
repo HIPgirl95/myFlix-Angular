@@ -2,11 +2,6 @@ import { Component, OnInit, Input } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { UserRegistrationService } from '../fetch-api-data.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { FormsModule } from '@angular/forms';
-import { MatCardModule } from '@angular/material/card';
-import { MatButtonModule } from '@angular/material/button';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
 import { Router } from '@angular/router';
 
 @Component({
@@ -33,12 +28,12 @@ export class UserLoginFormComponent implements OnInit {
         localStorage.setItem('user', JSON.stringify(result.user));
         localStorage.setItem('token', result.token);
         this.dialogRef.close();
-        this.router.navigate(['movies']);
         this.snackBar.open('Successfully logged in!', 'OK', { duration: 2000 });
+        this.router.navigate(['movies']);
         console.log(localStorage.getItem('user'));
       },
-      (result) => {
-        this.snackBar.open(result, 'OK', { duration: 2000 });
+      (error) => {
+        this.snackBar.open(error, 'OK', { duration: 2000 });
       }
     );
   }

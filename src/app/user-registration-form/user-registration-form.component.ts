@@ -8,11 +8,7 @@ import { UserRegistrationService } from '../fetch-api-data.service';
 
 //used to display notifications to user
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { FormsModule } from '@angular/forms';
-import { MatCardModule } from '@angular/material/card';
-import { MatButtonModule } from '@angular/material/button';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-registration-form',
@@ -26,7 +22,8 @@ export class UserRegistrationFormComponent implements OnInit {
   constructor(
     public fetchApiData: UserRegistrationService,
     public dialogRef: MatDialogRef<UserRegistrationFormComponent>,
-    public snackBar: MatSnackBar
+    public snackBar: MatSnackBar,
+    private router: Router
   ) {}
 
   ngOnInit(): void {}
@@ -34,14 +31,15 @@ export class UserRegistrationFormComponent implements OnInit {
   //this is the function responsible for sending the form inputs to the backend
   registerUser(): void {
     this.fetchApiData.userRegistration(this.userData).subscribe(
-      (result) => {
+      (result: any) => {
         this.dialogRef.close();
         this.snackBar.open('User registered successfully!', 'OK', {
           duration: 2000,
         });
+        this.router.navigate(['welcome']);
       },
-      (result) => {
-        this.snackBar.open(result, 'OK', {
+      (error: any) => {
+        this.snackBar.open(error, 'OK', {
           duration: 2000,
         });
       }
