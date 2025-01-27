@@ -3,10 +3,11 @@ import { UserRegistrationService } from '../fetch-api-data.service';
 import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
 import { CommonModule } from '@angular/common';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-movie-card',
-  imports: [MatCardModule, MatDialogModule, CommonModule],
+  imports: [MatCardModule, MatDialogModule, CommonModule, MatIconModule],
   templateUrl: './movie-card.component.html',
   styleUrl: './movie-card.component.scss',
 })
