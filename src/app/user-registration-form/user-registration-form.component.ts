@@ -9,12 +9,16 @@ import { UserRegistrationService } from '../fetch-api-data.service';
 //used to display notifications to user
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-user-registration-form',
   templateUrl: './user-registration-form.component.html',
   styleUrl: './user-registration-form.component.scss',
-  standalone: false,
+  // standalone: false,
+  imports: [MatCardModule, FormsModule, MatFormFieldModule],
 })
 export class UserRegistrationFormComponent implements OnInit {
   @Input() userData = { Username: '', Password: '', Email: '', Birthday: '' };

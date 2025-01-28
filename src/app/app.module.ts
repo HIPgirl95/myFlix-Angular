@@ -21,11 +21,12 @@ import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { MovieCardComponent } from './movie-card/movie-card.component';
 import { UserLoginFormComponent } from './user-login-form/user-login-form.component';
 
-const appRoutes: Routes = [
-  { path: 'welcome', component: WelcomePageComponent },
-  { path: 'movies', component: MovieCardComponent },
-  { path: '', redirectTo: 'welcome', pathMatch: 'prefix' },
-];
+import { routes } from './app.routes';
+// const appRoutes: Routes = [
+//   { path: 'welcome', component: WelcomePageComponent },
+//   { path: 'movies', component: MovieCardComponent },
+//   { path: '', redirectTo: 'welcome', pathMatch: 'prefix' },
+// ];
 
 @NgModule({
   declarations: [
@@ -36,7 +37,7 @@ const appRoutes: Routes = [
     WelcomePageComponent,
   ],
   imports: [
-    RouterModule.forRoot(appRoutes),
+    RouterModule.forRoot(routes),
     BrowserModule,
     HttpClientModule,
     // AppRoutingModule,
@@ -53,6 +54,6 @@ const appRoutes: Routes = [
     MatIconModule,
   ],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [],
 })
 export class AppModule {}

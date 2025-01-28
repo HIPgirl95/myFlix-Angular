@@ -3,10 +3,14 @@ import { MatDialogRef } from '@angular/material/dialog';
 import { UserRegistrationService } from '../fetch-api-data.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { MatCardModule } from '@angular/material/card';
+import { FormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @Component({
   selector: 'app-user-login-form',
-  standalone: false,
+  // standalone: false,
+  imports: [MatCardModule, FormsModule, MatFormFieldModule],
   templateUrl: './user-login-form.component.html',
   styleUrl: './user-login-form.component.scss',
 })
