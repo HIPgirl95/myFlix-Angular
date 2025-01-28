@@ -133,10 +133,10 @@ export class UserRegistrationService {
   }
 
   //PUT new user details
-  public editUser(username: string): Observable<any> {
+  public editUser(userData: any): Observable<any> {
     const token = this.getStoredToken();
     return this.http
-      .delete(apiUrl + 'users/' + username, {
+      .put(apiUrl + 'users/' + userData, {
         headers: new HttpHeaders({
           Authorization: 'Bearer ' + token,
         }),

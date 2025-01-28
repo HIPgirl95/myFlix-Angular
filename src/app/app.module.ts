@@ -22,6 +22,8 @@ import { MovieCardComponent } from './movie-card/movie-card.component';
 import { UserLoginFormComponent } from './user-login-form/user-login-form.component';
 
 import { routes } from './app.routes';
+import { ProfileViewComponent } from './profile-view/profile-view.component';
+import { ProfileEditComponent } from './profile-edit/profile-edit.component';
 // const appRoutes: Routes = [
 //   { path: 'welcome', component: WelcomePageComponent },
 //   { path: 'movies', component: MovieCardComponent },
@@ -35,6 +37,8 @@ import { routes } from './app.routes';
     MovieCardComponent,
     AppComponent,
     WelcomePageComponent,
+    ProfileViewComponent,
+    ProfileEditComponent,
   ],
   imports: [
     RouterModule.forRoot(routes),
