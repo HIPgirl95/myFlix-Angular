@@ -36,6 +36,7 @@ const appRoutes: Routes = [
     WelcomePageComponent,
   ],
   imports: [
+    RouterModule.forRoot(appRoutes),
     BrowserModule,
     HttpClientModule,
     // AppRoutingModule,
@@ -49,11 +50,9 @@ const appRoutes: Routes = [
     MatSnackBarModule,
     AppComponent,
     UserRegistrationFormComponent,
-    RouterModule.forRoot(appRoutes),
-    RouterModule,
     MatIconModule,
   ],
   providers: [],
-  bootstrap: [],
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
