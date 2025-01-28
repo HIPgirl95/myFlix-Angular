@@ -11,7 +11,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
 // import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,13 +20,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { MovieCardComponent } from './movie-card/movie-card.component';
 import { UserLoginFormComponent } from './user-login-form/user-login-form.component';
-import { routes } from './app.routes';
 
-// const appRoutes: Routes = [
-//   { path: 'welcome', component: WelcomePageComponent },
-//   { path: 'movies', component: MovieCardComponent },
-//   { path: '', redirectTo: 'welcome', pathMatch: 'prefix' },
-// ];
+const appRoutes: Routes = [
+  { path: 'welcome', component: WelcomePageComponent },
+  { path: 'movies', component: MovieCardComponent },
+  { path: '', redirectTo: 'welcome', pathMatch: 'prefix' },
+];
 
 @NgModule({
   declarations: [
@@ -50,7 +49,7 @@ import { routes } from './app.routes';
     MatSnackBarModule,
     AppComponent,
     UserRegistrationFormComponent,
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(appRoutes),
     RouterModule,
     MatIconModule,
   ],
