@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ProfileEditComponent } from '../profile-edit/profile-edit.component';
+import { UserRegistrationService } from '../fetch-api-data.service';
 
 @Component({
   selector: 'app-profile-view',
@@ -9,7 +10,13 @@ import { ProfileEditComponent } from '../profile-edit/profile-edit.component';
   styleUrl: './profile-view.component.scss',
 })
 export class ProfileViewComponent implements OnInit {
-  constructor(public dialog: MatDialog) {}
+  userData: any = {};
+  constructor(
+    public dialog: MatDialog,
+    public fetchApiData: UserRegistrationService
+  ) {
+    this.userData = JSON.parse(localStorage.getItem('user') || '');
+  }
   ngOnInit(): void {}
 
   openProfileEditComponent(): void {
