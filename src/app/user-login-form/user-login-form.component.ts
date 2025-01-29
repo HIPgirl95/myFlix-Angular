@@ -6,11 +6,12 @@ import { Router } from '@angular/router';
 import { MatCardModule } from '@angular/material/card';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 @Component({
   selector: 'app-user-login-form',
   // standalone: false,
-  imports: [MatCardModule, FormsModule, MatFormFieldModule],
+  imports: [MatCardModule, FormsModule, MatFormFieldModule, MatInputModule],
   templateUrl: './user-login-form.component.html',
   styleUrl: './user-login-form.component.scss',
 })
@@ -33,7 +34,7 @@ export class UserLoginFormComponent implements OnInit {
         localStorage.setItem('token', result.token);
         this.dialogRef.close();
         this.snackBar.open('Successfully logged in!', 'OK', { duration: 2000 });
-        this.router.navigate(['movies']);
+        this.router.navigate(['users']);
         console.log(localStorage.getItem('user'));
       },
       (error) => {

@@ -12,13 +12,14 @@ import { Router } from '@angular/router';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
 
 @Component({
   selector: 'app-user-registration-form',
   templateUrl: './user-registration-form.component.html',
   styleUrl: './user-registration-form.component.scss',
   // standalone: false,
-  imports: [MatCardModule, FormsModule, MatFormFieldModule],
+  imports: [MatCardModule, FormsModule, MatFormFieldModule, MatInputModule],
 })
 export class UserRegistrationFormComponent implements OnInit {
   @Input() userData = { Username: '', Password: '', Email: '', Birthday: '' };

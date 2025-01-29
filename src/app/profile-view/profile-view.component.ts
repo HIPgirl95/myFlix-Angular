@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ProfileEditComponent } from '../profile-edit/profile-edit.component';
 
@@ -8,7 +8,7 @@ import { ProfileEditComponent } from '../profile-edit/profile-edit.component';
   templateUrl: './profile-view.component.html',
   styleUrl: './profile-view.component.scss',
 })
-export class ProfileViewComponent {
+export class ProfileViewComponent implements OnInit {
   constructor(public dialog: MatDialog) {}
   ngOnInit(): void {}
 
