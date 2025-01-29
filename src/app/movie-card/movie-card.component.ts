@@ -5,6 +5,11 @@ import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+
+import { GenreInfoComponent } from '../genre-info/genre-info.component';
+import { DirectorInfoComponent } from '../director-info/director-info.component';
+import { SynopsisComponent } from '../synopsis/synopsis.component';
 
 @Component({
   selector: 'app-movie-card',
@@ -15,6 +20,7 @@ import { MatIconModule } from '@angular/material/icon';
     MatFormFieldModule,
     CommonModule,
     MatIconModule,
+    MatDialogModule,
   ],
   templateUrl: './movie-card.component.html',
   styleUrl: './movie-card.component.scss',
@@ -22,7 +28,10 @@ import { MatIconModule } from '@angular/material/icon';
 export class MovieCardComponent {
   movies: any[] = [];
 
-  constructor(public fetchApiData: UserRegistrationService) {}
+  constructor(
+    public fetchApiData: UserRegistrationService,
+    public dialog: MatDialog
+  ) {}
 
   ngOnInit(): void {
     this.getMovies();
@@ -33,6 +42,12 @@ export class MovieCardComponent {
       this.movies = resp;
       console.log(this.movies);
       return this.movies;
+    });
+  }
+
+  openGenreDialog(movie: any): void {
+    this.dialog.open(GenreInfoComponent, {
+      data: { genreName: movie.genreName },
     });
   }
 }
