@@ -23,6 +23,10 @@ export class UserRegistrationService {
     return localStorage.getItem('token');
   }
 
+  private getUserData(): any {
+    return localStorage.getItem('user');
+  }
+
   //GET a list of movies
   public getAllMovies(): Observable<any> {
     const token = this.getStoredToken();
@@ -72,10 +76,11 @@ export class UserRegistrationService {
   }
 
   //GET a user by username
-  public getUser(username: string): Observable<any> {
+  public getUser(): Observable<any> {
     const token = this.getStoredToken();
+    const user = this.getUserData();
     return this.http
-      .get(apiUrl + 'users/' + username, {
+      .get(apiUrl + 'users/' + `${user.Username}`, {
         headers: new HttpHeaders({
           Authorization: 'Bearer ' + token,
         }),
