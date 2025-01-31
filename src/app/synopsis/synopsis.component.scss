@@ -1,0 +1,16 @@
+.synopsis-dialog {
+  margin: 10px;
+}
+
+.title {
+  font-size: x-large;
+  font-weight: 475;
+  text-decoration: underline;
+}
+
+.close-button {
+  display: flex;
+  justify-self: flex-end;
+  color: red;
+  margin-right: 20px;
+}

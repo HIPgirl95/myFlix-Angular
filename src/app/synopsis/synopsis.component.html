@@ -1,1 +1,5 @@
-<p>synopsis works!</p>
+<div class="synopsis-dialog">
+  <mat-card-title class="title">{{ data?.Title }}</mat-card-title>
+  <mat-card-subtitle>{{ data?.Description }}</mat-card-subtitle>
+  <button (click)="closeDialog()" class="close-button">Close</button>
+</div>

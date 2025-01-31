@@ -56,4 +56,10 @@ export class MovieCardComponent {
       data: director,
     });
   }
+
+  openSynopsisDialog(synopsis: any): void {
+    this.dialog.open(SynopsisComponent, {
+      data: synopsis,
+    });
+  }
 }
