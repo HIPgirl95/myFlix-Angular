@@ -5,10 +5,17 @@ import { UserRegistrationService } from '../fetch-api-data.service';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { CommonModule } from '@angular/common';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-profile-view',
-  imports: [MatDialogModule, MatButtonModule, MatCardModule, CommonModule],
+  imports: [
+    MatDialogModule,
+    MatButtonModule,
+    MatCardModule,
+    CommonModule,
+    NavbarComponent,
+  ],
   templateUrl: './profile-view.component.html',
   styleUrl: './profile-view.component.scss',
 })

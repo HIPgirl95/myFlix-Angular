@@ -1,3 +1,5 @@
+<app-navbar></app-navbar>
+
 <div class="profileView">
   <h1>Profile</h1>
   <h2>Welcome {{ userData.Username }}</h2>
@@ -14,7 +16,6 @@
   <div>
     <mat-card *ngFor="let movie of favoriteMovies" class="movie-card">
       <mat-card-title>{{ movie.Title }}</mat-card-title>
-      <!-- <img [src]="movie.img" /> -->
     </mat-card>
   </div>
 </div>

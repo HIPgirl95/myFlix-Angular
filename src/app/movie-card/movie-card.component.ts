@@ -10,6 +10,7 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { GenreInfoComponent } from '../genre-info/genre-info.component';
 import { DirectorInfoComponent } from '../director-info/director-info.component';
 import { SynopsisComponent } from '../synopsis/synopsis.component';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-movie-card',
@@ -21,6 +22,7 @@ import { SynopsisComponent } from '../synopsis/synopsis.component';
     CommonModule,
     MatIconModule,
     MatDialogModule,
+    NavbarComponent,
   ],
   templateUrl: './movie-card.component.html',
   styleUrl: './movie-card.component.scss',
