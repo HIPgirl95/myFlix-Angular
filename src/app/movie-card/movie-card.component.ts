@@ -50,4 +50,10 @@ export class MovieCardComponent {
       data: genre,
     });
   }
+
+  openDirectorDialog(director: any): void {
+    this.dialog.open(DirectorInfoComponent, {
+      data: director,
+    });
+  }
 }

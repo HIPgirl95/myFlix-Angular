@@ -1,1 +1,5 @@
-<p>director-info works!</p>
+<div class="director-dialog">
+  <mat-card-title>{{ data?.Name }}</mat-card-title>
+  <mat-card-subtitle>{{ data?.Bio }}</mat-card-subtitle>
+  <button (click)="closeDialog()" class="close-button">Close</button>
+</div>
