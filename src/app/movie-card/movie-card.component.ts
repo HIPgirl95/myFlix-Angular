@@ -47,7 +47,7 @@ export class MovieCardComponent {
 
   openGenreDialog(genre: any): void {
     this.dialog.open(GenreInfoComponent, {
-      data: { genre },
+      data: genre,
     });
   }
 }
