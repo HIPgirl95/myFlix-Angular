@@ -45,9 +45,9 @@ export class MovieCardComponent {
     });
   }
 
-  openGenreDialog(movie: any): void {
+  openGenreDialog(genre: any): void {
     this.dialog.open(GenreInfoComponent, {
-      data: { genreName: movie.genreName },
+      data: { genre },
     });
   }
 }
