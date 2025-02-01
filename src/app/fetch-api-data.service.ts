@@ -89,10 +89,12 @@ export class UserRegistrationService {
   }
 
   //POST movie to favorites list
-  public addFavorite(username: string, movieId: string): Observable<any> {
+  public addFavorite(movieId: string): Observable<any> {
     const token = this.getStoredToken();
+    const user = this.getUserData();
+    const username = user.Username;
     return this.http
-      .post(apiUrl + 'users/' + username + '/movies/' + movieId, {
+      .post(apiUrl + 'users/' + `${username}` + '/movies/' + movieId, {
         headers: new HttpHeaders({
           Authorization: 'Bearer ' + token,
         }),
@@ -101,10 +103,12 @@ export class UserRegistrationService {
   }
 
   //DELETE movie to favorites list
-  public removeFavorite(username: string, movieId: string): Observable<any> {
+  public removeFavorite(movieId: string): Observable<any> {
     const token = this.getStoredToken();
+    const user = this.getUserData();
+    const username = user.Username;
     return this.http
-      .delete(apiUrl + 'users/' + username + '/movies/' + movieId, {
+      .delete(apiUrl + 'users/' + `${username}` + '/movies/' + movieId, {
         headers: new HttpHeaders({
           Authorization: 'Bearer ' + token,
         }),
