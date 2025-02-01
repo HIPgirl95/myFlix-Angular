@@ -11,16 +11,12 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class ToggleFavoriteComponent {
   favorites: any[] = [];
   movie: any;
-  userData: any = {};
-  // user = localStorage.getItem('user');
+  user = localStorage.getItem('user');
 
   constructor(
     public fetchApiData: UserRegistrationService,
     public snackBar: MatSnackBar
-  ) {
-    const storedData = localStorage.getItem('user');
-    this.userData = JSON.parse(storedData || '');
-  }
+  ) {}
 
   ngOnInit(): void {}
 
@@ -29,23 +25,18 @@ export class ToggleFavoriteComponent {
     return favorite.length ? true : false;
   }
 
-  // addFavorite(movie: any): void {
-  //   this.fetchApiData.addFavorite(movie.Title).subscribe((result) => {
-  //     console.log(result);
-  //     const user = JSON.parse(localStorage.getItem('user') || '');
-  //     user.FavMovies.push(movie.Title);
-  //     this.favorites.push(movie);
-  //     this.snackBar.open('Movie added to favorites', 'OK', {
-  //       duration: 2000,
-  //     });
-  //   });
-  // }
+  addFavorite(user: any, movie: any): void {
+    this.fetchApiData
+      .addFavorite(user.username, this.movie)
+      .subscribe((result) => {
+        console.log(result);
+        user.FavMovies.push(movie.Title);
+        localStorage.setItem('user', JSON.stringify(user));
 
-  toggleFavorite(movie: any): void {
-    this.fetchApiData.removeFavorite(movie).subscribe((movies: any) => {
-      this.favorites = movies.filter((movie: any) =>
-        this.userData.FavMovies.includes(movie._id)
-      );
-    });
+        this.favorites.push(movie.Title);
+        this.snackBar.open('Movie added to favorites', 'OK', {
+          duration: 2000,
+        });
+      });
   }
 }
