@@ -27,7 +27,7 @@ export class ToggleFavoriteComponent {
 
   addFavorite(user: any, movie: any): void {
     this.fetchApiData
-      .addFavorite(user.username, movie.Title)
+      .addFavorite(user.username, this.movie)
       .subscribe((result) => {
         console.log(result);
         user.FavMovies.push(movie.Title);
