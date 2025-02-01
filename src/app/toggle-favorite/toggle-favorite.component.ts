@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { UserRegistrationService } from '../fetch-api-data.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-toggle-favorite',
@@ -9,31 +10,28 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrl: './toggle-favorite.component.scss',
 })
 export class ToggleFavoriteComponent {
-  favorites: any[] = [];
   movie: any;
-  user = localStorage.getItem('user');
+  user: any = {};
 
   constructor(
+    @Inject(MAT_DIALOG_DATA) public data: any,
     public fetchApiData: UserRegistrationService,
     public snackBar: MatSnackBar
-  ) {}
+  ) {
+    const storedData = localStorage.getItem('user');
+    this.user = JSON.parse(storedData || '');
+    this.movie = data;
+  }
 
   ngOnInit(): void {}
 
-  isFavorite(movie: any): boolean {
-    const favorite = this.favorites.filter((title) => title === movie.Title);
-    return favorite.length ? true : false;
-  }
-
-  addFavorite(user: any, movie: any): void {
+  addFavorite(movie: any): void {
     this.fetchApiData
-      .addFavorite(user.username, this.movie)
+      .addFavorite(this.user.Username, movie._id)
       .subscribe((result) => {
         console.log(result);
-        user.FavMovies.push(movie.Title);
-        localStorage.setItem('user', JSON.stringify(user));
-
-        this.favorites.push(movie.Title);
+        this.user.FavMovies.push(movie._id);
+        localStorage.setItem('user', JSON.stringify(this.user));
         this.snackBar.open('Movie added to favorites', 'OK', {
           duration: 2000,
         });

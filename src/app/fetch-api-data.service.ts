@@ -141,7 +141,7 @@ export class UserRegistrationService {
   public editUser(userData: any): Observable<any> {
     const token = this.getStoredToken();
     return this.http
-      .put(apiUrl + 'users/' + userData, {
+      .put(apiUrl + 'users/' + userData.Username, {
         headers: new HttpHeaders({
           Authorization: 'Bearer ' + token,
         }),
