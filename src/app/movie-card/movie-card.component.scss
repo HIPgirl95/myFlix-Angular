@@ -1,3 +1,8 @@
+$phone-screen: 480px;
+$small-screen: 768px;
+$medium-screen: 1024px;
+$large-screen: 1200px;
+
 .movie-grid {
   display: flex;
   flex-wrap: wrap;
@@ -9,6 +14,48 @@
   width: 19%;
   max-width: 20%;
   margin: 0.5%;
+}
+
+.title {
+  font-size: x-large;
+}
+
+.starring {
+  font-size: medium;
+  text-decoration: overline;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: $large-screen) {
+  .movie-card {
+    width: 24%;
+    max-width: 24%;
+  }
+}
+
+@media only screen and (max-width: $medium-screen) {
+  .movie-card {
+    width: 32%;
+    max-width: 32%;
+  }
+}
+
+@media only screen and (max-width: $small-screen) {
+  .movie-card {
+    width: 49%;
+    max-width: 49%;
+  }
+}
+
+@media screen and (max-width: $phone-screen) {
+  .movie-card {
+    width: 98%;
+    max-width: 98%;
+  }
 }
 
 .image {
