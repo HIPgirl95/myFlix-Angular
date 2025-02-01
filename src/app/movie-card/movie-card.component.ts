@@ -11,6 +11,7 @@ import { GenreInfoComponent } from '../genre-info/genre-info.component';
 import { DirectorInfoComponent } from '../director-info/director-info.component';
 import { SynopsisComponent } from '../synopsis/synopsis.component';
 import { NavbarComponent } from '../navbar/navbar.component';
+import { ToggleFavoriteComponent } from '../toggle-favorite/toggle-favorite.component';
 
 @Component({
   selector: 'app-movie-card',
@@ -65,5 +66,9 @@ export class MovieCardComponent {
     });
   }
 
-  executeToggleFavorite(): void {}
+  executeToggleFavorite(movie: any): void {
+    this.dialog.open(ToggleFavoriteComponent, {
+      data: movie,
+    });
+  }
 }

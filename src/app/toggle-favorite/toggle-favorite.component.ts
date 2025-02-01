@@ -9,6 +9,10 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrl: './toggle-favorite.component.scss',
 })
 export class ToggleFavoriteComponent {
+  favorites: any[] = [];
+  movie: any;
+  user = localStorage.getItem('user');
+
   constructor(
     public fetchApiData: UserRegistrationService,
     public snackBar: MatSnackBar
@@ -16,8 +20,23 @@ export class ToggleFavoriteComponent {
 
   ngOnInit(): void {}
 
-  toggleFavorite(movie: any): boolean {
-    this.fetchApiData.addFavorite;
-    return false;
+  isFavorite(movie: any): boolean {
+    const favorite = this.favorites.filter((title) => title === movie.Title);
+    return favorite.length ? true : false;
+  }
+
+  addFavorite(user: any, movie: any): void {
+    this.fetchApiData
+      .addFavorite(user.username, movie.Title)
+      .subscribe((result) => {
+        console.log(result);
+        user.FavMovies.push(movie.Title);
+        localStorage.setItem('user', JSON.stringify(user));
+
+        this.favorites.push(movie.Title);
+        this.snackBar.open('Movie added to favorites', 'OK', {
+          duration: 2000,
+        });
+      });
   }
 }
