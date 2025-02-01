@@ -23,7 +23,9 @@
       <button mat-button color="primary" (click)="openSynopsisDialog(movie)">
         Synopsis
       </button>
-      <button><mat-icon>favorite_border</mat-icon></button>
+      <button (click)="executeToggleFavorite()">
+        <mat-icon>favorite_border</mat-icon>
+      </button>
     </mat-card-actions>
   </mat-card>
 </div>

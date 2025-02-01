@@ -64,4 +64,6 @@ export class MovieCardComponent {
       data: synopsis,
     });
   }
+
+  executeToggleFavorite(): void {}
 }
