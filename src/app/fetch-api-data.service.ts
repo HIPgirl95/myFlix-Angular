@@ -78,7 +78,7 @@ export class UserRegistrationService {
   //GET a user by username
   public getUser(): Observable<any> {
     const token = this.getStoredToken();
-    const user = this.getUserData();
+    const user = JSON.parse(this.getUserData());
     return this.http
       .get(apiUrl + 'users/' + `${user.Username}`, {
         headers: new HttpHeaders({

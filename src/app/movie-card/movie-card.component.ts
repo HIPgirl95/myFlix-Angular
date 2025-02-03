@@ -30,7 +30,8 @@ import { ToggleFavoriteComponent } from '../toggle-favorite/toggle-favorite.comp
 })
 export class MovieCardComponent {
   movies: any[] = [];
-  user: any = JSON.parse(localStorage.getItem('user') || '');
+  user: any = {};
+  favoriteMovies: any[] = [];
 
   constructor(
     public fetchApiData: UserRegistrationService,
@@ -38,14 +39,33 @@ export class MovieCardComponent {
   ) {}
 
   ngOnInit(): void {
+    this.getFavs();
     this.getMovies();
   }
 
   getMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((resp: any) => {
       this.movies = resp;
+      this.isFavorite();
       return this.movies;
     });
+  }
+
+  getFavs(): void {
+    this.fetchApiData.getUser().subscribe((result: any) => {
+      this.user = result;
+      this.favoriteMovies = this.user.FavMovies;
+    });
+  }
+
+  isFavorite(): void {
+    setTimeout(() => {
+      this.movies.forEach((movie) => {
+        this.favoriteMovies.includes(movie._id)
+          ? (movie.icon = 'delete')
+          : (movie.icon = 'favorite_border');
+      });
+    }, 1000);
   }
 
   openGenreDialog(genre: any): void {

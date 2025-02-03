@@ -34,6 +34,7 @@ export class ProfileViewComponent implements OnInit {
   }
   ngOnInit(): void {
     this.fetchApiData.getUser();
+    this.loadFavoriteMovies();
   }
 
   openProfileEditComponent(): void {
