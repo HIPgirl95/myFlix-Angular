@@ -3,6 +3,20 @@ $small-screen: 768px;
 $medium-screen: 1024px;
 $large-screen: 1200px;
 
+.profile {
+  justify-self: center;
+  padding: 5px 20px 10px 20px;
+  max-width: max-content;
+  border: 2px solid black;
+  border-radius: 10%;
+  box-shadow: 5px 5px black;
+  margin-top: 5px;
+}
+
+.favorite-movies {
+  padding-left: 4%;
+}
+
 .movie-grid {
   display: flex;
   flex-wrap: wrap;

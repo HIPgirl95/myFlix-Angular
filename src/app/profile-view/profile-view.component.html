@@ -1,31 +1,36 @@
 <app-navbar></app-navbar>
 
-<div class="profileView">
-  <h1>Welcome {{ userData.Username }}!</h1>
-  <p class="user-info">Email: {{ userData.Email }}</p>
-  <p class="user-info">Birthday: {{ userData.Birthday }}</p>
-  <button
-    mat-raised-button
-    (click)="openProfileEditComponent()"
-    style="margin-right: 10px"
-  >
-    Edit Details
-  </button>
-  <h2>Favorite Movies</h2>
-  <div class="movie-grid">
-    <mat-card *ngFor="let movie of favoriteMovies" class="movie-card">
-      <mat-card-header class="header">
-        <mat-card-title class="title">{{ movie.Title }}</mat-card-title>
-        <mat-card-subtitle class="starring"
-          >Starring: {{ movie.LeadActor }}</mat-card-subtitle
-        >
-      </mat-card-header>
-      <img src="{{ movie.Image }}" alt="{{ movie.Title }}" class="image" />
-      <mat-card-actions class="actions">
-        <button (click)="executeToggleFavorite(movie)">
-          <mat-icon>delete</mat-icon>
-        </button>
-      </mat-card-actions>
-    </mat-card>
+<div>
+  <div class="profile">
+    <h1>Welcome {{ userData.Username }}!</h1>
+    <p class="user-info">Email: {{ userData.Email }}</p>
+    <p class="user-info">Birthday: {{ userData.Birthday }}</p>
+
+    <button
+      mat-raised-button
+      (click)="openProfileEditComponent()"
+      style="margin-right: 10px"
+    >
+      Edit Details
+    </button>
+  </div>
+  <div class="favorite-movies">
+    <h2>Favorite Movies</h2>
+    <div class="movie-grid">
+      <mat-card *ngFor="let movie of favoriteMovies" class="movie-card">
+        <mat-card-header class="header">
+          <mat-card-title class="title">{{ movie.Title }}</mat-card-title>
+          <mat-card-subtitle class="starring"
+            >Starring: {{ movie.LeadActor }}</mat-card-subtitle
+          >
+        </mat-card-header>
+        <img src="{{ movie.Image }}" alt="{{ movie.Title }}" class="image" />
+        <mat-card-actions class="actions">
+          <button (click)="executeToggleFavorite(movie)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
   </div>
 </div>

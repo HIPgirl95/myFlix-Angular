@@ -1,3 +1,7 @@
+#toolbar {
+  padding-left: 2%;
+}
+
 .navbar-actions {
   max-width: min-content;
   display: inline-block;
@@ -11,4 +15,6 @@
   text-decoration: none;
   border-radius: 10%;
   padding: 8px;
+  box-shadow: 4px 4px black;
+  border: 1px solid black;
 }
