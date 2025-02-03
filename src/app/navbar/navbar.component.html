@@ -2,19 +2,30 @@
   <!-- <div class="navbar-logo">
       <img src="#" />
     </div> -->
-  <mat-nav-list>
-    <mat-list-item class="navbar-actions">
-      <a routerLink="/movies" class="link">Movies</a>
-    </mat-list-item>
+  <div style="width: 100%">
+    <button mat-button routerLink="/movies" class="navbar-actions">
+      Movies
+    </button>
+
     <!-- <mat-list-item class="navbar-actions">
       <a routerLink="/genres" class="link">Genres</a>
     </mat-list-item>
     <mat-list-item class="navbar-actions">
       <a routerLink="/directors" class="link">Directors</a>
     </mat-list-item> -->
-    <mat-list-item class="navbar-actions">
-      <a routerLink="/users" class="link">Profile</a>
-    </mat-list-item>
-  </mat-nav-list>
-  <div class="navbar-actions"></div>
+
+    <button mat-button routerLink="/users" class="navbar-actions">
+      Profile
+    </button>
+  </div>
+  <div style="justify-content: right">
+    <button
+      mat-raised-button
+      routerLink="/welcome"
+      (click)="logout()"
+      class="logout"
+    >
+      Log out
+    </button>
+  </div>
 </mat-toolbar>

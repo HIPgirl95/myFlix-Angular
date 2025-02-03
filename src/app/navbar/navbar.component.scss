@@ -2,8 +2,13 @@
   max-width: min-content;
   display: inline-block;
   align-content: center;
+  text-decoration: underline;
+  font-size: larger;
 }
 
-.link {
+.logout {
   font-size: larger;
+  text-decoration: none;
+  border-radius: 10%;
+  padding: 8px;
 }
