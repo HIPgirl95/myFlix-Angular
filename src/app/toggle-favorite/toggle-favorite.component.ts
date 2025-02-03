@@ -1,7 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { UserRegistrationService } from '../fetch-api-data.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-toggle-favorite',
@@ -16,7 +16,8 @@ export class ToggleFavoriteComponent {
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any,
     public fetchApiData: UserRegistrationService,
-    public snackBar: MatSnackBar
+    public snackBar: MatSnackBar,
+    public dialgogRef: MatDialogRef<ToggleFavoriteComponent>
   ) {
     const storedData = localStorage.getItem('user');
     this.user = JSON.parse(storedData || '');
@@ -25,16 +26,30 @@ export class ToggleFavoriteComponent {
 
   ngOnInit(): void {}
 
-  addFavorite(movie: any): void {
-    this.fetchApiData
-      .addFavorite(this.user.Username, movie._id)
-      .subscribe((result) => {
-        console.log(result);
-        this.user.FavMovies.push(movie._id);
-        localStorage.setItem('user', JSON.stringify(this.user));
-        this.snackBar.open('Movie added to favorites', 'OK', {
-          duration: 2000,
+  toggleFavorite(movie: any): void {
+    if (this.user.FavMovies.includes(movie._id)) {
+      this.fetchApiData
+        .removeFavorite(this.user.Username, movie._id)
+        .subscribe(() => {
+          this.dialgogRef.close();
+          const index = this.user.FavMovies.indexOf(movie._id);
+          this.user.FavMovies.splice(index, 1);
+          localStorage.setItem('user', JSON.stringify(this.user));
+          this.snackBar.open('Movie removed from favorites', 'OK', {
+            duration: 2000,
+          });
         });
-      });
+    } else {
+      this.fetchApiData
+        .addFavorite(this.user.Username, movie._id)
+        .subscribe((result) => {
+          this.dialgogRef.close();
+          this.user.FavMovies.push(movie._id);
+          localStorage.setItem('user', JSON.stringify(this.user));
+          this.snackBar.open('Movie added to favorites', 'OK', {
+            duration: 2000,
+          });
+        });
+    }
   }
 }

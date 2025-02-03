@@ -6,6 +6,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { CommonModule } from '@angular/common';
 import { NavbarComponent } from '../navbar/navbar.component';
+import { ToggleFavoriteComponent } from '../toggle-favorite/toggle-favorite.component';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-profile-view',
@@ -15,6 +17,7 @@ import { NavbarComponent } from '../navbar/navbar.component';
     MatCardModule,
     CommonModule,
     NavbarComponent,
+    MatIconModule,
   ],
   templateUrl: './profile-view.component.html',
   styleUrl: './profile-view.component.scss',
@@ -35,6 +38,12 @@ export class ProfileViewComponent implements OnInit {
 
   openProfileEditComponent(): void {
     this.dialog.open(ProfileEditComponent, { width: '280px' });
+  }
+
+  executeToggleFavorite(movie: any): void {
+    this.dialog.open(ToggleFavoriteComponent, {
+      data: movie,
+    });
   }
 
   loadFavoriteMovies(): void {

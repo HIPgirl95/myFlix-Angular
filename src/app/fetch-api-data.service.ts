@@ -30,7 +30,6 @@ export class UserRegistrationService {
   //GET a list of movies
   public getAllMovies(): Observable<any> {
     const token = this.getStoredToken();
-    console.log(token);
     return this.http
       .get(apiUrl + 'movies', {
         headers: new HttpHeaders({
@@ -92,7 +91,6 @@ export class UserRegistrationService {
   //POST movie to favorites list
   public addFavorite(username: string, movieId: string): Observable<any> {
     const token = this.getStoredToken();
-    console.log(token);
     const body = null;
     return this.http
       .post(apiUrl + 'users/' + username + '/movies/' + movieId, body, {
@@ -162,7 +160,6 @@ export class UserRegistrationService {
 
   //making the api call for the user registration output
   public userRegistration(userDetails: any): Observable<any> {
-    console.log(userDetails);
     return this.http
       .post(apiUrl + 'users', userDetails)
       .pipe(catchError(this.handleError));
