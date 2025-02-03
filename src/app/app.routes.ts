@@ -11,5 +11,5 @@ export const routes: Routes = [
   { path: 'users', component: ProfileViewComponent },
   { path: 'genres', component: GenreViewComponent },
   { path: 'directors', component: DirectorViewComponent },
-  { path: '/', redirectTo: 'welcome', pathMatch: 'prefix' },
+  { path: '', redirectTo: 'welcome', pathMatch: 'prefix' },
 ];

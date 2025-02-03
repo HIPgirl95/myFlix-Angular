@@ -35,6 +35,12 @@ export class ProfileViewComponent implements OnInit {
   ngOnInit(): void {
     this.fetchApiData.getUser();
     this.loadFavoriteMovies();
+    this.formatBirthday();
+  }
+
+  formatBirthday(): void {
+    const [year, month, day] = this.userData.Birthday.split('T')[0].split('-');
+    this.userData.Birthday = `${month}/${day}/${year}`;
   }
 
   openProfileEditComponent(): void {

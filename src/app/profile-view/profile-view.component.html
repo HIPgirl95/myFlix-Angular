@@ -1,8 +1,9 @@
 <app-navbar></app-navbar>
 
 <div class="profileView">
-  <h1>Profile</h1>
-  <h2>Welcome {{ userData.Username }}</h2>
+  <h1>Welcome {{ userData.Username }}!</h1>
+  <p class="user-info">Email: {{ userData.Email }}</p>
+  <p class="user-info">Birthday: {{ userData.Birthday }}</p>
   <button
     mat-raised-button
     (click)="openProfileEditComponent()"
@@ -10,6 +11,7 @@
   >
     Edit Details
   </button>
+  <h2>Favorite Movies</h2>
   <div class="movie-grid">
     <mat-card *ngFor="let movie of favoriteMovies" class="movie-card">
       <mat-card-header class="header">
