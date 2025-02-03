@@ -29,7 +29,9 @@ export class ProfileViewComponent implements OnInit {
     const storedData = localStorage.getItem('user');
     this.userData = JSON.parse(storedData || '');
   }
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.fetchApiData.getUser();
+  }
 
   openProfileEditComponent(): void {
     this.dialog.open(ProfileEditComponent, { width: '280px' });

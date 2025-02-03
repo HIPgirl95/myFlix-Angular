@@ -29,11 +29,13 @@ export class ProfileEditComponent implements OnInit {
     this.fetchApiData.editUser(this.userData).subscribe(
       (result: any) => {
         this.userData = result;
-        console.log(result);
         this.dialogRef.close();
         this.snackBar.open('User information updated', 'OK', {
           duration: 2000,
         });
+        const newUser = JSON.stringify(result);
+        localStorage.setItem('user', newUser);
+        window.location.reload();
       },
       (error: any) => {
         this.snackBar.open(error, 'OK', { duration: 2000 });
