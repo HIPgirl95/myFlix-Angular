@@ -44,7 +44,7 @@ export class ProfileViewComponent implements OnInit {
   }
 
   openProfileEditComponent(): void {
-    this.dialog.open(ProfileEditComponent, { width: '280px' });
+    this.dialog.open(ProfileEditComponent, { width: '500px' });
   }
 
   executeToggleFavorite(movie: any): void {

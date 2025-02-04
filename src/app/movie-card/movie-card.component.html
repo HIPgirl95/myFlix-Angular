@@ -10,21 +10,34 @@
     </mat-card-header>
     <img src="{{ movie.Image }}" alt="{{ movie.Title }}" class="image" />
     <mat-card-actions class="actions">
-      <button mat-button color="primary" (click)="openGenreDialog(movie.Genre)">
+      <button
+        mat-button
+        (click)="openGenreDialog(movie.Genre)"
+        class="action-button"
+      >
         Genre
       </button>
       <button
         mat-button
-        color="primary"
         (click)="openDirectorDialog(movie.Director)"
+        class="action-button"
       >
         Director
       </button>
-      <button mat-button color="primary" (click)="openSynopsisDialog(movie)">
+      <button
+        mat-button
+        (click)="openSynopsisDialog(movie)"
+        class="action-button"
+      >
         Synopsis
       </button>
-      <button (click)="executeToggleFavorite(movie)">
-        <mat-icon>
+      <button
+        mat-raised-button
+        (click)="executeToggleFavorite(movie)"
+        class="action-button"
+      >
+        Favorite
+        <mat-icon class="icon">
           {{ movie.icon }}
         </mat-icon>
       </button>

@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { UserLoginFormComponent } from '../user-login-form/user-login-form.component';
 import { UserRegistrationFormComponent } from '../user-registration-form/user-registration-form.component';
 import { MatDialog } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-welcome-page',
-  standalone: false,
+  imports: [MatButtonModule],
   templateUrl: './welcome-page.component.html',
   styleUrl: './welcome-page.component.scss',
 })

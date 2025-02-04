@@ -6,10 +6,17 @@ import { MatCardModule } from '@angular/material/card';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-profile-edit',
-  imports: [MatCardModule, FormsModule, MatFormFieldModule, MatInputModule],
+  imports: [
+    MatCardModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+  ],
   templateUrl: './profile-edit.component.html',
   styleUrl: './profile-edit.component.scss',
 })

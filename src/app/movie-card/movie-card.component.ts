@@ -12,6 +12,7 @@ import { DirectorInfoComponent } from '../director-info/director-info.component'
 import { SynopsisComponent } from '../synopsis/synopsis.component';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { ToggleFavoriteComponent } from '../toggle-favorite/toggle-favorite.component';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-movie-card',
@@ -24,6 +25,7 @@ import { ToggleFavoriteComponent } from '../toggle-favorite/toggle-favorite.comp
     MatIconModule,
     MatDialogModule,
     NavbarComponent,
+    MatButtonModule,
   ],
   templateUrl: './movie-card.component.html',
   styleUrl: './movie-card.component.scss',
@@ -62,8 +64,8 @@ export class MovieCardComponent {
     setTimeout(() => {
       this.movies.forEach((movie) => {
         this.favoriteMovies.includes(movie._id)
-          ? (movie.icon = 'delete')
-          : (movie.icon = 'favorite_border');
+          ? (movie.icon = 'favorite')
+          : (movie.icon = 'add');
       });
     }, 1000);
   }

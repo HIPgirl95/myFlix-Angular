@@ -1,5 +1,6 @@
 #toolbar {
   padding-left: 2%;
+  padding-right: 2%;
 }
 
 .navbar-actions {
@@ -8,6 +9,10 @@
   align-content: center;
   text-decoration: underline;
   font-size: larger;
+}
+
+.logo {
+  font-size: xx-large;
 }
 
 .logout {
