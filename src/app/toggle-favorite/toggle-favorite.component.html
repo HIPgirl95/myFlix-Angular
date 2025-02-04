@@ -1,1 +1,6 @@
-<button (click)="toggleFavorite(movie)">Are you sure?</button>
+<div class="confirm-dialog">
+  <h2 class="text">{{ getDynamicText(movie) }}</h2>
+  <button mat-raised-button (click)="toggleFavorite(movie)" class="confirm">
+    Confirm
+  </button>
+</div>
