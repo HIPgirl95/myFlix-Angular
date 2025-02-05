@@ -1,6 +1,36 @@
 # MyFlixAngularClient
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.3.
+This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.3. It allows users to view, add, and remove movies from their favorites, update their profile, and see detailed information about genres, directors, and synopses. The app also includes features such as logging in, viewing movie details, and editing user profiles.
+
+## Features
+
+- **Movie List:** Display a list of movies with details such as genre, director, and synopsis.
+- **Favorite Movies:** Add or remove movies from the user's favorite list.
+- **User Profile:** View and edit user profile details, including username, email, and birthday.
+- **Genre and Director Info:** View detailed information about movie genres and directors.
+- **Responsive UI:** The app is fully responsive and works well on both desktop and mobile devices.
+
+## Technologies
+**Frontend:** Angular
+**UI Components:** Angular Material
+**CSS Styling:** SCSS
+**Backend API:** Movie API (https://github.com/HIPgirl95/movie_api)
+**Deployment:** GitHub Pages
+
+## Documentation
+
+This application is documented using [TypeDoc](https://typedoc.org/). The documentation includes information about the app’s components, services, and features.
+
+- **To generate the documentation:**
+  1. Make sure you have installed all dependencies (`npm install`).
+  2. Run the following command to generate the documentation:
+     ```bash
+     npx typedoc --out docs src/
+     ```
+  3. The documentation will be available in the `docs/` folder. You can open `docs/index.html` in your browser to view the full documentation.
+
+The documentation is generated based on the inline comments and TypeScript types used throughout the code. It includes descriptions of the components, methods, and classes, as well as their parameters and return types.
+> **Note:** Some sections of the documentation were assisted by AI tools, specifically OpenAI’s language model, to improve clarity and consistency.
 
 ## Development server
 
