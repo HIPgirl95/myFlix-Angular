@@ -17,6 +17,15 @@ This project was generated using [Angular CLI](https://github.com/angular/angula
 - **Backend API:** Movie API (https://github.com/HIPgirl95/movie_api)
 - **Deployment:** GitHub Pages
 
+## Screenshots
+- **Welcome Screen**
+![image](https://github.com/user-attachments/assets/45d22ab0-2e87-4197-aa47-0cbd7d12f038)
+- **User Profile**
+![image](https://github.com/user-attachments/assets/d4174a0e-cebc-4f71-8c02-3fd03ac26e51)
+- **Movie Cards**
+![image](https://github.com/user-attachments/assets/f3d62d6c-8915-44d4-a81a-cbd59635e4c1)
+
+
 ## Documentation
 
 This application is documented using [TypeDoc](https://typedoc.org/). The documentation includes information about the app’s components, services, and features.
