@@ -8,7 +8,6 @@ import { MatButtonModule } from '@angular/material/button';
  * WelcomePageComponent is responsible for displaying the welcome page and
  * opening the login and registration dialog windows
  *
- * @exports
  * @class WelcomePageComponent
  */
 
@@ -22,30 +21,29 @@ export class WelcomePageComponent {
   /**
    * Creates an instance of WelcomePageComponent
    * @param {MatDialog} dialog - dialog service to manage opening of dialogs
-   * @memberof WelcomePageComponent
    */
 
   constructor(public dialog: MatDialog) {}
 
   /**
    * Initializes the component
-   * @memberof WelcomePageComponent
+   * @returns {void}
    */
   ngOnInit(): void {}
 
   /**
-   * Open the user Registration Dialog when called. width is set to 280px
+   * Open the user registration dialog when called. width is set to 280px
    *
-   * @memberof WelcomePageComponent
+   * @returns {void}
    */
   openUserRegistrationDialog(): void {
     this.dialog.open(UserRegistrationFormComponent, { width: '280px' });
   }
 
   /**
-   * Open the user login Dialog when called. width is set to 280px
+   * Open the user login dialog when called. width is set to 280px
    *
-   * @memberof WelcomePageComponent
+   * @returns {void}
    */
   openUserLoginDialog(): void {
     this.dialog.open(UserLoginFormComponent, { width: '280px' });
