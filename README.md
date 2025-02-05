@@ -11,11 +11,11 @@ This project was generated using [Angular CLI](https://github.com/angular/angula
 - **Responsive UI:** The app is fully responsive and works well on both desktop and mobile devices.
 
 ## Technologies
-**Frontend:** Angular
-**UI Components:** Angular Material
-**CSS Styling:** SCSS
-**Backend API:** Movie API (https://github.com/HIPgirl95/movie_api)
-**Deployment:** GitHub Pages
+- **Frontend:** Angular
+- **UI Components:** Angular Material
+- **CSS Styling:** SCSS
+- **Backend API:** Movie API (https://github.com/HIPgirl95/movie_api)
+- **Deployment:** GitHub Pages
 
 ## Documentation
 
