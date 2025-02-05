@@ -9,6 +9,13 @@ import { NavbarComponent } from '../navbar/navbar.component';
 import { ToggleFavoriteComponent } from '../toggle-favorite/toggle-favorite.component';
 import { MatIconModule } from '@angular/material/icon';
 
+/**
+ * ProfileViewComponent is responsible for displaying user profile information,
+ * allowing users to edit their profile and manage favorite movies.
+ *
+ * @class ProfileViewComponent
+ * @implements {OnInit}
+ */
 @Component({
   selector: 'app-profile-view',
   imports: [
@@ -23,8 +30,19 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrl: './profile-view.component.scss',
 })
 export class ProfileViewComponent implements OnInit {
+  /**
+   * Stores the user's profile information
+   *
+   * @type any
+   */
   userData: any = {};
+  /**
+   * Stores a list of the user's favorite movies
+   *
+   * @type any[]
+   */
   favoriteMovies: any[] = [];
+
   constructor(
     public dialog: MatDialog,
     public fetchApiData: UserRegistrationService
