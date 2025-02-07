@@ -15,7 +15,6 @@ import { MatButtonModule } from '@angular/material/button';
  * After a successful update, the changes are saved both in the backend and in local storage.
  *
  * @class ProfileEditComponent
- * @implements {OnInit}
  */
 @Component({
   selector: 'app-profile-edit',

@@ -14,7 +14,6 @@ import { MatButtonModule } from '@angular/material/button';
  * to log in an existing user
  *
  * @class UserLoginFormComponent
- * @implements OnInit
  */
 @Component({
   selector: 'app-user-login-form',

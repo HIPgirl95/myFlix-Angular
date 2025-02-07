@@ -44,8 +44,8 @@ export class MovieCardComponent {
   /**
    * Creates an instance of MovieCardComponent.
    *
-   * @param {UserRegistrationService} fetchApiData - Service to handle fetching movie and user data.
-   * @param {MatDialog} dialog - Dialog service for opening movie-related dialogs.
+   * @param {any} fetchApiData - Service to handle fetching movie and user data.
+   * @param {any} dialog - Dialog service for opening movie-related dialogs.
    */
   constructor(
     public fetchApiData: UserRegistrationService,

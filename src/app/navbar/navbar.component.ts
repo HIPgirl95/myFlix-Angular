@@ -21,7 +21,6 @@ export class NavbarComponent {
    * Logs out the current user by removing user data and token from localStorage.
    * After logout, the user's session data is cleared.
    *
-   * @method logout
    * @returns {void} This method doesn't return any value.
    */
   logout(): void {

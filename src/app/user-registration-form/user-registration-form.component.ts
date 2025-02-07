@@ -20,7 +20,6 @@ import { MatButtonModule } from '@angular/material/button';
  * register a new user's information
  *
  * @class UserRegistrationFormComponent
- * @implements OnInit
  */
 @Component({
   selector: 'app-user-registration-form',

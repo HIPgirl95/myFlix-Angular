@@ -14,7 +14,6 @@ import { MatIconModule } from '@angular/material/icon';
  * allowing users to edit their profile and manage favorite movies.
  *
  * @class ProfileViewComponent
- * @implements {OnInit}
  */
 @Component({
   selector: 'app-profile-view',
