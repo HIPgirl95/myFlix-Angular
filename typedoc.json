@@ -1,0 +1,13 @@
+{
+  "entryPoints": [
+    "src/main.ts",
+    "src/app/director-info/director-info.component.ts",
+    "src/app/genre-info/genre-info.component.ts",
+    "src/app/movie-card/movie-card.component.ts"
+  ],
+  "out": "docs",
+  "includeVersion": true,
+  "excludeExternals": true,
+  "excludePrivate": true,
+  "excludeProtected": true
+}
