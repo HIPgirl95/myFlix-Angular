@@ -8,7 +8,7 @@ import {
 import { Observable, throwError } from 'rxjs';
 import { map } from 'rxjs';
 
-const apiUrl = 'https://hannah-hogan-movie-api-ea6c47e0093b.herokuapp.com/';
+const apiUrl = 'http://54.91.115.155/';
 
 @Injectable({
   providedIn: 'root',
